@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/playfair_display_bold"
-        android:text="Tap. Shop. Heal."
+        android:text="@string/tap_shop_heal"
         android:textColor="@color/black"
         android:textDirection="firstStrong"
         android:textSize="28sp"
@@ -56,7 +56,7 @@
         android:layout_width="382dp"
         android:layout_height="90dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="From soothing cinnamon tea to herbal smokes, explore a curated range of natural products delivered fresh to your doorstep, weltness, natural habits."
+        android:text="@string/from_soothing_cinnamon_tea_to_herbal_smokes_explore_a_curated_range_of_natural_products_delivered_fresh_to_your_doorstep_weltness_natural_habits"
         android:textAlignment="center"
         android:textColor="#80000000"
         android:textSize="16sp"
@@ -120,11 +120,11 @@
         app:layout_constraintVertical_bias="0.949" />
 
     <Button
-        android:id="@+id/nextbtn3"
-        android:layout_width="82dp"
+        android:id="@+id/getstart"
+        android:layout_width="105dp"
         android:layout_height="42dp"
         android:backgroundTint="@color/PigmentGreen"
-        android:text="@string/next"
+        android:text="Get Start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.93"
