@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         Thread.sleep(3000)
         installSplashScreen()
-        setContentView(R.layout.activity_login_screen)
+        setContentView(R.layout.activity_registration_screen)
 
     }
 }
