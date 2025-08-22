@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             delay(3000)
-            startActivity(Intent(this@MainActivity, OnboardScreen2::class.java))
+            startActivity(Intent(this@MainActivity, OnboardScreen3::class.java))
             finish()
         }
     }
