@@ -9,4 +9,19 @@
     <string name="onboarstext5">Tap. Shop. Heal.</string>
     <string name="onboarstext6">From soothing cinnamon tea to herbal smokes, explore a curated range of natural products delivered fresh to your doorstep.</string>
     <string name="getstrtbtn">Get Start</string>
+    <string name="sign_in_text1">Sign In</string>
+    <string name="sigin_in_text2">We missed you. Let’s get you back in!</string>
+    <string name="email">Email</string>
+    <string name="sign_in_hint1">Enter Your Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in_hint2">Enter Your Password</string>
+    <string name="check_box">Stay Signed In</string>
+    <string name="forgorpwbtn">Forgot Password?</string>
+    <string name="sign_in_btn">Sign In</string>
+    <string name="or_sign_in_with">Or Sign In With</string>
+    <string name="google1">Sign in with Google</string>
+    <string name="apple1">Sign in with Apple</string>
+    <string name="facebook1">Sign in with Facebook</string>
+    <string name="don_t_have_an_account">Don’t have an account?</string>
+    <string name="sign_up_btn_loginscreen">Sign Up</string>
 </resources>

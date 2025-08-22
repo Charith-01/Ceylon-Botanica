@@ -1,9 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.CeylonBotanica" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
 
-    <style name="Theme.CeylonBotanica" parent="Base.Theme.CeylonBotanica" />
+    <style name="Theme.CeylonBotanica" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Brand palette -->
+        <item name="colorPrimary">@color/cb_green_dark</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorPrimaryContainer">@color/cb_green_dark</item>
+        <item name="colorSecondary">@color/cb_green_dark</item>
+        <item name="colorTertiary">@color/cb_green_dark</item>
+
+        <!-- optional chrome -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
 </resources>
