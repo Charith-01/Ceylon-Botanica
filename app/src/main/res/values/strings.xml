@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Ceylon Botanica</string>
+    <string name="onboarstext1">Welcome to Ceylon Botanica</string>
+    <string name="onboardscteentext2">Step into a world of ancient healing. Discover handpicked herbs, spices, and wellness treasures nurtures by the lush lands of Sri Lanka.</string>
+    <string name="skipbtn">Skip</string>
 </resources>
