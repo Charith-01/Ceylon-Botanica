@@ -97,7 +97,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/skipbtn"
+        android:id="@+id/backbtn"
         android:layout_width="94dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
