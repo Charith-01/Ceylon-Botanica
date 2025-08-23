@@ -2,11 +2,11 @@
 
     <style name="Theme.CeylonBotanica" parent="Theme.Material3.Light.NoActionBar">
         <!-- Brand palette -->
-        <item name="colorPrimary">@color/cb_green_dark</item>
+        <item name="colorPrimary">@color/primary</item>
         <item name="colorOnPrimary">@android:color/white</item>
-        <item name="colorPrimaryContainer">@color/cb_green_dark</item>
-        <item name="colorSecondary">@color/cb_green_dark</item>
-        <item name="colorTertiary">@color/cb_green_dark</item>
+        <item name="colorPrimaryContainer">@color/primary</item>
+        <item name="colorSecondary">@color/primary</item>
+        <item name="colorTertiary">@color/primary</item>
 
         <!-- optional chrome -->
         <item name="android:statusBarColor">@android:color/transparent</item>

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="cb_green_dark">#08A045</color>   <!-- bottom-left -->
-    <color name="cb_green_mid">#71C73A</color>    <!-- center band -->
-    <color name="cb_white">#FFFFFF</color>
-    <color name="cb_divider">#DCDCDC</color><!-- top-right -->
-    <color name="cb_text_muted">#808080</color>
+    <color name="secondary">#FFFFFF</color>       <!-- White background -->
+
+    <color name="primary">#08A045</color>         <!-- Deep green -->
+    <color name="primaryVariant">#71C73A</color>  <!-- Lighter green -->
+
+    <color name="accent">#808080</color>          <!-- Muted gray text -->
+
+    <color name="divider">#DCDCDC</color>         <!-- Light gray divider -->
+    <color name="black">#FF000000</color>         <!-- Pure black -->
 </resources>

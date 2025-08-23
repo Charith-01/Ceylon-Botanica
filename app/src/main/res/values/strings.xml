@@ -22,6 +22,25 @@
     <string name="google1">Sign in with Google</string>
     <string name="apple1">Sign in with Apple</string>
     <string name="facebook1">Sign in with Facebook</string>
-    <string name="don_t_have_an_account">Don’t have an account?</string>
+    <string name="don_t_have_an_account">Don’t have an account? </string>
     <string name="sign_up_btn_loginscreen">Sign Up</string>
+    <string name="signup_text1">Create an Account</string>
+    <string name="signup_text2">Create an account to explore our full range of natural products.</string>
+    <string name="full_name">Full Name</string>
+    <string name="enter_your_full_name">Enter Your Full Name</string>
+    <string name="email_signup">Email</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="address_signup">Address</string>
+    <string name="enter_your_address">Enter Your Address</string>
+    <string name="password_signup">Password</string>
+    <string name="enter_your_password">Enter Your Password</string>
+    <string name="agree_with">Agree with</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="or_sign_up_with">Or Sign Up With</string>
+    <string name="facebook2">Facebook</string>
+    <string name="apple2">Apple</string>
+    <string name="google2">Google</string>
+    <string name="already_have_an_account">Already have an account? </string>
+    <string name="sign_in">Sign In</string>
 </resources>

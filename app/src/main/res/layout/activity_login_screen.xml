@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cb_white"
+    android:background="@color/secondary"
     tools:context=".LoginScreen">
 
     <!-- Title -->
@@ -32,7 +32,7 @@
         android:fontFamily="@font/open_sans_bold"
         android:text="@string/sigin_in_text2"
         android:textAlignment="center"
-        android:textColor="@color/cb_text_muted"
+        android:textColor="@color/accent"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/textView4"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:boxBackgroundColor="@color/cb_white"
+        app:boxBackgroundColor="@color/secondary"
         app:boxStrokeColor="@color/ti_stroke"
         app:boxStrokeWidth="1dp"
         app:boxStrokeWidthFocused="2dp"
@@ -106,7 +106,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:endIconMode="password_toggle"
-        app:boxBackgroundColor="@color/cb_white"
+        app:boxBackgroundColor="@color/secondary"
         app:boxStrokeColor="@color/ti_stroke"
         app:boxStrokeWidth="1dp"
         app:boxStrokeWidthFocused="2dp"
@@ -132,12 +132,15 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Stay signed in (MaterialCheckBox) -->
+
+    <!-- Forgot Password -->
+
     <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/cbStaySignedIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="@string/check_box"
         android:textSize="17sp"
@@ -145,7 +148,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tilPassword" />
 
-    <!-- Forgot Password -->
     <TextView
         android:id="@+id/tvForgot"
         android:layout_width="wrap_content"
@@ -153,7 +155,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="@string/forgorpwbtn"
-        android:textColor="@color/cb_green_dark"
+        android:textColor="@color/primary"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/cbStaySignedIn"
@@ -183,7 +185,7 @@
         android:id="@+id/dividerLeft"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="@color/cb_divider"
+        android:background="@color/divider"
         app:layout_constraintTop_toBottomOf="@id/signinbtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/tvOr"
@@ -207,7 +209,7 @@
         android:id="@+id/dividerRight"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="@color/cb_divider"
+        android:background="@color/divider"
         app:layout_constraintTop_toBottomOf="@id/signinbtn"
         app:layout_constraintStart_toEndOf="@id/tvOr"
         app:layout_constraintEnd_toEndOf="parent"
@@ -276,7 +278,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/open_sans_bold"
             android:text="@string/sign_up_btn_loginscreen"
-            android:textColor="@color/cb_green_dark"
+            android:textColor="@color/primary"
             android:textSize="17sp"
             android:textStyle="bold" />
     </LinearLayout>
