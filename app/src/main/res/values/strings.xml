@@ -48,4 +48,7 @@
     <string name="verify">Verify</string>
     <string name="didn_t_receive_a_code">Didn’t Receive a Code?</string>
     <string name="resend_code">Resend Code</string>
+    <string name="success">Success!</string>
+    <string name="congratulations_you_have_been_successfully_authenticated">Congratulations! You have been successfully authenticated</string>
+    <string name="continuebtn">Continue</string>
 </resources>
