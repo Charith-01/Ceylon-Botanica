@@ -43,4 +43,9 @@
     <string name="google2">Google</string>
     <string name="already_have_an_account">Already have an account? </string>
     <string name="sign_in">Sign In</string>
+    <string name="verify_code">Verify Code</string>
+    <string name="we_ve_sent_a_6_digit_code_to_your_email">We’ve sent a 6-digit code to your email</string>
+    <string name="verify">Verify</string>
+    <string name="didn_t_receive_a_code">Didn’t Receive a Code?</string>
+    <string name="resend_code">Resend Code</string>
 </resources>
