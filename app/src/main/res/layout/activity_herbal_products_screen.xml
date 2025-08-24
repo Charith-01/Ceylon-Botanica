@@ -2,35 +2,28 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".HerbalProductsScreen">
 
-    <!-- Scrollable page content -->
+    <!-- Full-screen vertical scroll -->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- ==== YOUR EXISTING SCREEN CONTENT ==== -->
+        <!-- Put ALL content inside this single child -->
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/main"
+            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".HomeScreen">
-
-            <!-- keep content above the nav bar -->
-            <!-- (padding belongs as its own attribute line, without inline comments) -->
-            <View
-                android:id="@+id/_spacerForPadding"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:visibility="gone"
-                tools:ignore="MissingConstraints" />
+            android:paddingBottom="24dp">
 
             <!-- Top row (location, title, icons) -->
             <TextView
@@ -40,7 +33,7 @@
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="196dp"
                 android:fontFamily="@font/open_sans_semibold"
-                android:text="@string/deliver_to"
+                android:text="@string/deliver_to_herbal"
                 android:textColor="@color/accent"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:fontFamily="@font/open_sans_bold"
-                android:text="@string/_67_morris_street_san_antonio"
+                android:text="@string/_67_morris_street_san_antonio_herbal"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -105,65 +98,15 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/notification" />
 
-            <!-- Search bar -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/searchbar"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="16dp"
-                app:boxBackgroundColor="@color/divider"
-                app:boxCornerRadiusBottomEnd="24dp"
-                app:boxCornerRadiusBottomStart="24dp"
-                app:boxCornerRadiusTopEnd="24dp"
-                app:boxCornerRadiusTopStart="24dp"
-                app:boxStrokeColor="@color/primary"
-                app:boxStrokeWidth="2dp"
-                app:boxStrokeWidthFocused="3dp"
-                app:hintEnabled="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView12"
-                app:startIconDrawable="@android:drawable/ic_menu_search">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etSearch"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:backgroundTint="#26808080"
-                    android:fontFamily="@font/open_sans"
-                    android:hint="@string/search_your_favorite_product"
-                    android:imeOptions="actionSearch"
-                    android:inputType="text"
-                    android:minHeight="52dp"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:textSize="16sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- Banner -->
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="390dp"
-                android:layout_height="190dp"
-                android:layout_marginTop="8dp"
-                android:scaleType="centerCrop"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/searchbar"
-                app:srcCompat="@drawable/banner1" />
-
             <!-- Categories (h-scroll) -->
             <HorizontalScrollView
                 android:id="@+id/categoryScroll"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="15dp"
                 android:overScrollMode="never"
                 android:scrollbars="none"
-                app:layout_constraintTop_toBottomOf="@id/imageView8"
+                app:layout_constraintTop_toBottomOf="@id/textView12"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
@@ -175,7 +118,6 @@
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp">
 
-                    <!-- Category items ... (unchanged) -->
                     <!-- Herbal Tea -->
                     <LinearLayout
                         android:layout_width="84dp"
@@ -191,7 +133,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="6dp"
-                            android:text="@string/herbal_tea"
+                            android:text="@string/herbal_tea_herbal"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:fontFamily="@font/open_sans_bold"/>
@@ -212,7 +154,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="6dp"
-                            android:text="@string/flavors"
+                            android:text="@string/flavors_herbal"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:fontFamily="@font/open_sans_bold"/>
@@ -233,7 +175,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="6dp"
-                            android:text="@string/spices"
+                            android:text="@string/spices_herbal"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:fontFamily="@font/open_sans_bold"/>
@@ -254,7 +196,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="6dp"
-                            android:text="@string/leaves"
+                            android:text="@string/leaves_herbal"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:fontFamily="@font/open_sans_bold"/>
@@ -275,7 +217,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="6dp"
-                            android:text="@string/seeds"
+                            android:text="Seeds"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:fontFamily="@font/open_sans_bold"/>
@@ -296,7 +238,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="6dp"
-                            android:text="@string/fruits"
+                            android:text="Fruits"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:fontFamily="@font/open_sans_bold"/>
@@ -305,32 +247,53 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
-            <!-- Popular -->
+            <!-- Section header row -->
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="18dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/categoryScroll"
+                app:srcCompat="@drawable/backicon" />
+
             <TextView
                 android:id="@+id/textView19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="14dp"
                 android:fontFamily="@font/open_sans_bold"
-                android:text="@string/popular"
+                android:text="Herbal Tea"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toBottomOf="@id/categoryScroll" />
 
-            <!-- Product grid (2 columns) -->
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="28dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/categoryScroll"
+                app:srcCompat="@drawable/filtericon" />
+
+            <!-- Product grid (3 rows, 2 columns) -->
             <LinearLayout
                 android:id="@+id/productList"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@id/textView19"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
-                <!-- ===== ROW 1 ===== -->
+                <!-- ROW 1 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -339,203 +302,6 @@
                     android:paddingEnd="12dp">
 
                     <!-- Product 1 -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="8dp"
-                        android:orientation="vertical"
-                        android:padding="6dp">
-
-                        <!-- rounded holder to make it look like screenshot (no CardView) -->
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/product_tile_bg"
-                            android:padding="0dp">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:adjustViewBounds="true"
-                                android:maxHeight="220dp"
-                                android:scaleType="fitCenter"
-                                app:srcCompat="@drawable/product1" />
-                        </FrameLayout>
-
-                        <!-- name + rating -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/open_sans_bold"
-                                android:text="@string/ceylon_cinnamon"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-                            <ImageView
-                                android:layout_width="15dp"
-                                android:layout_height="match_parent"
-                                app:srcCompat="@drawable/stat" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:text="@string/_4_5"
-                                android:textColor="@color/black"
-                                android:textSize="14sp"
-                                android:fontFamily="@font/open_sans_bold" />
-                        </LinearLayout>
-
-                        <!-- prices + add -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/open_sans_bold"
-                                    android:text="@string/_35"
-                                    android:textColor="#66000000"
-                                    android:textSize="14sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:fontFamily="@font/open_sans_bold"
-                                    android:text="@string/_20"
-                                    android:textColor="@color/black"
-                                    android:textSize="16sp" />
-                            </LinearLayout>
-
-                            <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                app:srcCompat="@drawable/addcartbtn" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <!-- Product 2 -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="8dp"
-                        android:orientation="vertical"
-                        android:padding="6dp">
-
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/product_tile_bg"
-                            android:padding="0dp">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:adjustViewBounds="true"
-                                android:maxHeight="220dp"
-                                android:scaleType="fitCenter"
-                                app:srcCompat="@drawable/product2" />
-                        </FrameLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/open_sans_bold"
-                                android:text="@string/turmeric_powder"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-                            <ImageView
-                                android:layout_width="18dp"
-                                android:layout_height="match_parent"
-                                app:srcCompat="@drawable/stat" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:text="@string/_4_8"
-                                android:textColor="@color/black"
-                                android:textSize="14sp"
-                                android:fontFamily="@font/open_sans_bold" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/open_sans_bold"
-                                    android:text="@string/_25"
-                                    android:textColor="#66000000"
-                                    android:textSize="14sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:fontFamily="@font/open_sans_bold"
-                                    android:text="@string/_18"
-                                    android:textColor="@color/black"
-                                    android:textSize="16sp" />
-                            </LinearLayout>
-
-                            <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                app:srcCompat="@drawable/addcartbtn" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!-- ===== ROW 2 ===== -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:orientation="horizontal"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp">
-
-                    <!-- Product 3 -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -569,10 +335,10 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/blue_lotus_tea"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="Blue Lotus Tea"
                                 android:textColor="@color/black"
-                                android:textSize="14sp"
-                                android:fontFamily="@font/open_sans_bold" />
+                                android:textSize="14sp" />
                             <ImageView
                                 android:layout_width="18dp"
                                 android:layout_height="18dp"
@@ -581,7 +347,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="4dp"
-                                android:text="@string/_4_6"
+                                android:text="4.8"
                                 android:textColor="@color/black"
                                 android:textSize="14sp"
                                 android:fontFamily="@font/open_sans_bold" />
@@ -604,7 +370,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/open_sans_bold"
-                                    android:text="@string/_28"
+                                    android:text="$35"
                                     android:textColor="#66000000"
                                     android:textSize="14sp" />
 
@@ -613,7 +379,197 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="8dp"
                                     android:fontFamily="@font/open_sans_bold"
-                                    android:text="@string/_22"
+                                    android:text="$18"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                app:srcCompat="@drawable/addcartbtn" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Product 2 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:orientation="vertical"
+                        android:padding="6dp">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/product_tile_bg"
+                            android:padding="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                android:maxHeight="220dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/product5" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Hibiscus Tea"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_bold" />
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                app:srcCompat="@drawable/stat" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="4.4"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:text="$14"
+                                    android:textColor="#66000000"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:text="$9"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                app:srcCompat="@drawable/addcartbtn" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- ROW 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+                    <!-- Product 3 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:orientation="vertical"
+                        android:padding="6dp">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/product_tile_bg"
+                            android:padding="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                android:maxHeight="220dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/product6" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Das Herbal Tea"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_bold" />
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                app:srcCompat="@drawable/stat" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="4.8"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:text="$18"
+                                    android:textColor="#66000000"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:text="$11"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
                             </LinearLayout>
@@ -646,7 +602,7 @@
                                 android:adjustViewBounds="true"
                                 android:maxHeight="220dp"
                                 android:scaleType="fitCenter"
-                                app:srcCompat="@drawable/product4" />
+                                app:srcCompat="@drawable/product7" />
                         </FrameLayout>
 
                         <LinearLayout
@@ -659,7 +615,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/vanilla_powder"
+                                android:text="Guava Leaves Tea"
                                 android:textColor="@color/black"
                                 android:textSize="14sp"
                                 android:fontFamily="@font/open_sans_bold" />
@@ -671,7 +627,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="4dp"
-                                android:text="@string/_4_7"
+                                android:text="4.5"
                                 android:textColor="@color/black"
                                 android:textSize="14sp"
                                 android:fontFamily="@font/open_sans_bold" />
@@ -694,7 +650,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/open_sans_bold"
-                                    android:text="@string/_29"
+                                    android:text="$12"
                                     android:textColor="#67000000"
                                     android:textSize="14sp" />
 
@@ -703,7 +659,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="8dp"
                                     android:fontFamily="@font/open_sans_bold"
-                                    android:text="@string/_24"
+                                    android:text="$7"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
                             </LinearLayout>
@@ -716,12 +672,11 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- ===== ROW 3 ===== -->
+                <!-- ROW 3 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
-                    android:layout_marginBottom="16dp"
                     android:orientation="horizontal"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp">
@@ -747,7 +702,7 @@
                                 android:adjustViewBounds="true"
                                 android:maxHeight="220dp"
                                 android:scaleType="fitCenter"
-                                app:srcCompat="@drawable/product5" />
+                                app:srcCompat="@drawable/product8" />
                         </FrameLayout>
 
                         <LinearLayout
@@ -760,7 +715,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/hibiscus_tea"
+                                android:text="Cacao leaves Tea"
                                 android:textColor="@color/black"
                                 android:textSize="14sp"
                                 android:fontFamily="@font/open_sans_bold" />
@@ -772,7 +727,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="4dp"
-                                android:text="@string/_4_4"
+                                android:text="4.4"
                                 android:textColor="@color/black"
                                 android:textSize="14sp"
                                 android:fontFamily="@font/open_sans_bold" />
@@ -795,7 +750,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/open_sans_bold"
-                                    android:text="@string/_21"
+                                    android:text="$18"
                                     android:textColor="#66000000"
                                     android:textSize="14sp" />
 
@@ -804,7 +759,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="8dp"
                                     android:fontFamily="@font/open_sans_bold"
-                                    android:text="@string/_17"
+                                    android:text="$15"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
                             </LinearLayout>
@@ -837,7 +792,7 @@
                                 android:adjustViewBounds="true"
                                 android:maxHeight="220dp"
                                 android:scaleType="fitCenter"
-                                app:srcCompat="@drawable/product6" />
+                                app:srcCompat="@drawable/product9" />
                         </FrameLayout>
 
                         <LinearLayout
@@ -850,7 +805,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/das_herbal_tea"
+                                android:text="Soursop Leaves Tea"
                                 android:textColor="@color/black"
                                 android:textSize="14sp"
                                 android:fontFamily="@font/open_sans_bold" />
@@ -862,7 +817,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="4dp"
-                                android:text="@string/_4_3"
+                                android:text="4.3"
                                 android:textColor="@color/black"
                                 android:textSize="14sp"
                                 android:fontFamily="@font/open_sans_bold" />
@@ -885,7 +840,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/open_sans_bold"
-                                    android:text="@string/_19"
+                                    android:text="$19"
                                     android:textColor="#65000000"
                                     android:textSize="14sp" />
 
@@ -894,7 +849,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="8dp"
                                     android:fontFamily="@font/open_sans_bold"
-                                    android:text="@string/_15"
+                                    android:text="$15"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
                             </LinearLayout>
@@ -906,145 +861,203 @@
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
+                <!-- ROW 4 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+                    <!-- Product 9 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:orientation="vertical"
+                        android:padding="6dp">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/product_tile_bg"
+                            android:padding="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                android:maxHeight="220dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/product4" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Vanilla powder Tea"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_bold" />
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                app:srcCompat="@drawable/stat" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="4.6"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:text="$21"
+                                    android:textColor="#66000000"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:text="$13"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                app:srcCompat="@drawable/addcartbtn" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Product 10 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:orientation="vertical"
+                        android:padding="6dp">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/product_tile_bg"
+                            android:padding="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                android:maxHeight="220dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/product10" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Bael flowers Tea"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_bold" />
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                app:srcCompat="@drawable/stat" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="4.8"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/open_sans_bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:text="$18"
+                                    android:textColor="#65000000"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:text="$34"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                app:srcCompat="@drawable/addcartbtn" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
             </LinearLayout>
+            <!-- /productList -->
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="90dp"
-                app:layout_constraintTop_toBottomOf="@id/textView19"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
+        <!-- /content -->
     </androidx.core.widget.NestedScrollView>
-
-    <!-- Fixed Bottom Nav Bar -->
-    <LinearLayout
-        android:id="@+id/bottomNav"
-        android:layout_width="0dp"
-        android:layout_height="85dp"
-        android:background="@color/primary"
-        android:elevation="8dp"
-        android:orientation="horizontal"
-        android:paddingTop="6dp"
-        android:paddingBottom="8dp"
-        android:weightSum="4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <!-- Home -->
-        <LinearLayout
-            android:id="@+id/tabHome"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/ivHome"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                app:srcCompat="@drawable/nav_home_selector" />
-
-            <TextView
-                android:id="@+id/tvHome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_bold"
-                android:text="@string/home"
-                android:textColor="@color/divider"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-        <!-- Wishlist -->
-        <LinearLayout
-            android:id="@+id/tabWishlist"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/ivWishlist"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                app:srcCompat="@drawable/nav_wishlist_selector" />
-
-            <TextView
-                android:id="@+id/tvWishlist"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_bold"
-                android:text="@string/wishlist"
-                android:textAlignment="center"
-                android:textColor="@color/divider"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-        <!-- Cart -->
-        <LinearLayout
-            android:id="@+id/tabCart"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/ivCart"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                app:srcCompat="@drawable/nav_cart_selector" />
-
-            <TextView
-                android:id="@+id/tvCart"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_bold"
-                android:text="@string/cart"
-                android:textAlignment="center"
-                android:textColor="@color/divider"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-        <!-- Profile -->
-        <LinearLayout
-            android:id="@+id/tabProfile"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/ivProfile"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                app:srcCompat="@drawable/nav_profile_selector" />
-
-            <TextView
-                android:id="@+id/tvProfile"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_bold"
-                android:text="@string/profile"
-                android:textAlignment="center"
-                android:textColor="@color/divider"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-    </LinearLayout>
+    <!-- /scroll -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
