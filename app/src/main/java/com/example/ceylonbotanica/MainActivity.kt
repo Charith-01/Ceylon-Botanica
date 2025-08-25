@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             delay(3000)
-            startActivity(Intent(this@MainActivity, PaymentGatewayScreen::class.java))
+            startActivity(Intent(this@MainActivity, PaymentVerificationScreen::class.java))
             finish()
         }
     }
