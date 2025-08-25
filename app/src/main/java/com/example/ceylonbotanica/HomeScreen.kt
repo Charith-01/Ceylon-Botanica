@@ -53,10 +53,8 @@ class HomeScreen : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_home_screen)
 
-        // Insets just for container & bottom bar
-        val contentContainer = findViewById<View>(R.id.contentContainer)
+        // Insets: bottom safe area for nav
         val bottomNav = findViewById<LinearLayout>(R.id.bottomNav)
-
         ViewCompat.setOnApplyWindowInsetsListener(bottomNav) { v, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.updatePadding(bottom = bars.bottom)
@@ -117,45 +115,56 @@ class HomeScreen : AppCompatActivity() {
         val fm = supportFragmentManager
         val tx = fm.beginTransaction().setReorderingAllowed(true)
 
-        val home = fm.findFragmentByTag(tagHome) ?: HomeFragment().also {
-            tx.add(R.id.contentContainer, it, tagHome)
+        if (fm.findFragmentByTag(tagHome) == null) {
+            tx.add(R.id.contentContainer, HomeFragment(), tagHome)
         }
-        val wishlist = fm.findFragmentByTag(tagWishlist) ?: WishlistFragment().also {
-            tx.add(R.id.contentContainer, it, tagWishlist).hide(it)
+        if (fm.findFragmentByTag(tagWishlist) == null) {
+            tx.add(R.id.contentContainer, WishlistFragment(), tagWishlist).hide(
+                fm.findFragmentByTag(tagWishlist) ?: WishlistFragment()
+            )
         }
-        val cart = fm.findFragmentByTag(tagCart) ?: CartFragment().also {
-            tx.add(R.id.contentContainer, it, tagCart).hide(it)
+        if (fm.findFragmentByTag(tagCart) == null) {
+            tx.add(R.id.contentContainer, CartFragment(), tagCart).hide(
+                fm.findFragmentByTag(tagCart) ?: CartFragment()
+            )
         }
-        val profile = fm.findFragmentByTag(tagProfile) ?: ProfileFragment().also {
-            tx.add(R.id.contentContainer, it, tagProfile).hide(it)
+        if (fm.findFragmentByTag(tagProfile) == null) {
+            tx.add(R.id.contentContainer, ProfileFragment(), tagProfile).hide(
+                fm.findFragmentByTag(tagProfile) ?: ProfileFragment()
+            )
         }
 
-        tx.commitNow() // commit immediately so they exist before first switch
+        tx.commitNow()
     }
 
     private fun setSelectedTab(tab: Tab, firstTime: Boolean = false) {
+        if (!firstTime && tab == currentTab) return
         currentTab = tab
 
-        // Toggle icon emphasis
+        // Smooth, quick icon emphasis (120ms)
         fun style(icon: ImageView, selected: Boolean) {
             icon.isSelected = selected
-            icon.scaleX = if (selected) 1.08f else 1.0f
-            icon.scaleY = if (selected) 1.08f else 1.0f
+            icon.animate()
+                .scaleX(if (selected) 1.08f else 1.0f)
+                .scaleY(if (selected) 1.08f else 1.0f)
+                .setDuration(120)
+                .start()
         }
         style(ivHome, tab == Tab.HOME)
         style(ivWishlist, tab == Tab.WISHLIST)
         style(ivCart, tab == Tab.CART)
         style(ivProfile, tab == Tab.PROFILE)
 
-        // Show/hide fragments
         val fm = supportFragmentManager
         val tx = fm.beginTransaction().setReorderingAllowed(true)
 
-        // Optional: quick crossfade animations (skip on first render)
+        // Fast fade-through animations
         if (!firstTime) {
             tx.setCustomAnimations(
-                android.R.anim.fade_in,
-                android.R.anim.fade_out
+                R.anim.fade_through_in,   // enter
+                R.anim.fade_through_out,  // exit
+                R.anim.fade_through_in,   // popEnter
+                R.anim.fade_through_out   // popExit
             )
         }
 
@@ -163,18 +172,10 @@ class HomeScreen : AppCompatActivity() {
         fun hide(tag: String) = fm.findFragmentByTag(tag)?.let { tx.hide(it) }
 
         when (tab) {
-            Tab.HOME -> {
-                show(tagHome); hide(tagWishlist); hide(tagCart); hide(tagProfile)
-            }
-            Tab.WISHLIST -> {
-                hide(tagHome); show(tagWishlist); hide(tagCart); hide(tagProfile)
-            }
-            Tab.CART -> {
-                hide(tagHome); hide(tagWishlist); show(tagCart); hide(tagProfile)
-            }
-            Tab.PROFILE -> {
-                hide(tagHome); hide(tagWishlist); hide(tagCart); show(tagProfile)
-            }
+            Tab.HOME -> { show(tagHome); hide(tagWishlist); hide(tagCart); hide(tagProfile) }
+            Tab.WISHLIST -> { hide(tagHome); show(tagWishlist); hide(tagCart); hide(tagProfile) }
+            Tab.CART -> { hide(tagHome); hide(tagWishlist); show(tagCart); hide(tagProfile) }
+            Tab.PROFILE -> { hide(tagHome); hide(tagWishlist); hide(tagCart); show(tagProfile) }
         }
         tx.commit()
     }
