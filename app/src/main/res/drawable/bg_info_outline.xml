@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <!-- light gray fill -->
+    <solid android:color="#ECEFF1"/>   <!-- or use a color resource -->
+
+    <!-- green outline -->
+    <stroke android:width="2dp" android:color="@color/primary"/>
+
+    <!-- rounded corners -->
+    <corners android:radius="16dp"/>
+
+    <!-- a little internal padding so the stroke doesn't hug content -->
+    <padding android:left="8dp" android:top="8dp"
+        android:right="8dp" android:bottom="8dp"/>
+</shape>
