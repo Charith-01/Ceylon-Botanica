@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.ceylonbotanica.home.HomeFragment
+import com.example.ceylonbotanica.profile.ProfileFragment
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
