@@ -28,25 +28,10 @@
             <!-- Top row (location, title, icons) -->
 
             <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
-                android:layout_marginEnd="196dp"
-                android:fontFamily="@font/open_sans_semibold"
-                android:text="@string/deliver_to_herbal"
-                android:textColor="@color/accent"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/imageView4"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/open_sans_bold"
                 android:text="@string/_67_morris_street_san_antonio_herbal"
                 android:textColor="@color/black"
@@ -57,10 +42,35 @@
                 app:layout_constraintTop_toBottomOf="@id/imageView4" />
 
             <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="37dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/locationicon" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="196dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/deliver_to_herbal"
+                android:textColor="@color/accent"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/imageView4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="31dp"
                 android:layout_height="19dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="60dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@id/textView12"
@@ -71,7 +81,7 @@
                 android:id="@+id/imageView6"
                 android:layout_width="45dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.789"
                 app:layout_constraintStart_toStartOf="parent"
@@ -82,23 +92,13 @@
                 android:id="@+id/imageView7"
                 android:layout_width="45dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/imageView6"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/notification" />
 
             <!-- Categories (h-scroll) -->
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="37dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="48dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/locationicon" />
 
             <HorizontalScrollView
                 android:id="@+id/categoryScroll"
