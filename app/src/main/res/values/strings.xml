@@ -22,7 +22,6 @@
     <string name="google1">Sign in with Google</string>
     <string name="apple1">Sign in with Apple</string>
     <string name="facebook1">Sign in with Facebook</string>
-    <string name="don_t_have_an_account">Don’t have an account? </string>
     <string name="sign_up_btn_loginscreen">Sign Up</string>
     <string name="signup_text1">Create an Account</string>
     <string name="signup_text2">Create an account to explore our full range of natural products.</string>
@@ -41,7 +40,6 @@
     <string name="facebook2">Facebook</string>
     <string name="apple2">Apple</string>
     <string name="google2">Google</string>
-    <string name="already_have_an_account">Already have an account? </string>
     <string name="sign_in">Sign In</string>
     <string name="verify_code">Verify Code</string>
     <string name="we_ve_sent_a_6_digit_code_to_your_email">We’ve sent a 6-digit code to your email</string>

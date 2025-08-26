@@ -357,7 +357,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/already_have_an_account"
+            android:text="Already have an account? "
             android:fontFamily="@font/open_sans_bold"
             android:textSize="17sp"
             android:textColor="#DE000000" />
@@ -370,7 +370,10 @@
             android:text="@string/sign_in"
             android:textColor="@color/primary"
             android:textStyle="bold"
-            android:textSize="17sp"/>
+            android:textSize="17sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
