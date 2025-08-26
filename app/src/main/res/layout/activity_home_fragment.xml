@@ -78,6 +78,8 @@
             android:layout_width="45dp"
             android:layout_height="35dp"
             android:layout_marginTop="24dp"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.797"
             app:layout_constraintStart_toStartOf="parent"
@@ -168,11 +170,14 @@
                 <!-- Category items ... (unchanged) -->
                 <!-- Herbal Tea -->
                 <LinearLayout
+                    android:id="@+id/catHerbalTea"
                     android:layout_width="84dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_marginEnd="10dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
                     <ImageView
                         android:layout_width="65dp"
                         android:layout_height="65dp"

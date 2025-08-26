@@ -268,19 +268,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/open_sans_bold"
-            android:text="@string/don_t_have_an_account"
+            android:text="Don’t have an account? "
             android:textColor="#DE000000"
             android:textSize="17sp" />
 
         <TextView
             android:id="@+id/btnsignup2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:fontFamily="@font/open_sans_bold"
             android:text="@string/sign_up_btn_loginscreen"
             android:textColor="@color/primary"
             android:textSize="17sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
