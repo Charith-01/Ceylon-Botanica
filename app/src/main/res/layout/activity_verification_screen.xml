@@ -8,7 +8,6 @@
     android:background="@color/secondary"
     tools:context=".VerificationScreen">
 
-    <!-- Title -->
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
@@ -24,7 +23,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Subtitle -->
     <TextView
         android:id="@+id/tvSubtitle"
         android:layout_width="0dp"
@@ -40,7 +38,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- OTP boxes row -->
     <LinearLayout
         android:id="@+id/otpRow"
         android:layout_width="0dp"
@@ -53,7 +50,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginHorizontal="24dp">
 
-        <!-- 6 single-character boxes -->
         <EditText
             android:id="@+id/etOtp1"
             android:layout_width="48dp"
@@ -137,7 +133,6 @@
             tools:ignore="LabelFor" />
     </LinearLayout>
 
-    <!-- Verify button -->
     <Button
         android:id="@+id/btnCntinue"
         android:layout_width="0dp"
@@ -154,7 +149,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Footer help -->
     <TextView
         android:id="@+id/tvNoCode"
         android:layout_width="0dp"

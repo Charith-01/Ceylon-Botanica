@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/launch_bg">
 
-    <!-- Put your logo file as res/drawable/logo.png -->
     <ImageView
         android:id="@+id/logo"
         android:layout_width="0dp"

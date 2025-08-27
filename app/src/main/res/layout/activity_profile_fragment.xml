@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".profile.ProfileFragment">
 
-    <!-- Header -->
     <ImageView
         android:id="@+id/btnBack"
         android:layout_width="45dp"
@@ -18,7 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Scrollable content -->
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="209dp"
@@ -52,7 +50,6 @@
             android:paddingTop="12dp"
             android:paddingBottom="20dp">
 
-            <!-- Avatar + camera badge -->
             <FrameLayout
                 android:layout_width="160dp"
                 android:layout_height="160dp"
@@ -67,7 +64,6 @@
 
             </FrameLayout>
 
-            <!-- Name + email -->
             <TextView
                 android:id="@+id/tvName"
                 android:layout_width="wrap_content"
@@ -89,8 +85,6 @@
                 android:textColor="@color/accent"
                 android:textSize="14sp" />
 
-            <!-- My Orders -->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -98,7 +92,6 @@
                 android:orientation="horizontal"
                 android:weightSum="4">
 
-                <!-- To Pay -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -120,7 +113,6 @@
                         android:textSize="16sp" />
                 </LinearLayout>
 
-                <!-- To Ship -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -142,7 +134,6 @@
                         android:textSize="16sp" />
                 </LinearLayout>
 
-                <!-- Shipped -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -164,7 +155,6 @@
                         android:textSize="16sp" />
                 </LinearLayout>
 
-                <!-- To Review -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -187,7 +177,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Personal Information -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -197,7 +186,6 @@
                 android:textSize="16sp"
                 android:fontFamily="@font/open_sans_bold"/>
 
-            <!-- Row helper: light rounded card -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/rowEditProfile"
                 android:layout_width="match_parent"

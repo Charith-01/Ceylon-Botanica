@@ -8,10 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".PaymentGatewayScreen">
 
-    <!-- Back + title -->
-
-    <!-- Payment row -->
-
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
@@ -47,9 +43,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivBack"
         tools:ignore="DuplicateIds">
-
-        <!-- One item = Frame (icon + small select overlay).
-             We use equal weights so they space nicely. -->
 
         <FrameLayout
             android:id="@+id/pmPaypal"
@@ -113,7 +106,6 @@
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/mastercardicon" />
 
-            <!-- Default selected -->
             <ImageView
                 android:id="@+id/ivSelMastercard"
                 android:layout_width="28dp"
@@ -186,7 +178,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivBack"
         tools:ignore="DuplicateIds">
-        <!-- pmPaypal / pmVisa / pmMastercard / pmDiners / pmAmex frames ... -->
     </LinearLayout>
 
     <LinearLayout

@@ -9,10 +9,6 @@
     android:background="#80DEE0E3"
     tools:context=".BlueLotusTeaProductScreen">
 
-    <!-- Bottom sheet area -->
-
-    <!-- Product image and top icons -->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/detailsSheet"
         android:layout_width="432dp"
@@ -219,7 +215,6 @@
             app:layout_constraintTop_toBottomOf="@+id/textView14">
 
 
-            <!-- New price -->
             <TextView
                 android:id="@+id/tvNewPrice"
                 android:layout_width="wrap_content"
@@ -230,7 +225,6 @@
                 android:textColor="@color/black"
                 android:textSize="22sp" />
 
-            <!-- push qty controls to the right -->
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"

@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".HerbalProductsScreen">
 
-    <!-- Full-screen vertical scroll -->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll"
         android:layout_width="0dp"
@@ -18,14 +17,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Put ALL content inside this single child -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="24dp">
-
-            <!-- Top row (location, title, icons) -->
 
             <TextView
                 android:id="@+id/textView12"
@@ -97,8 +93,6 @@
                 app:layout_constraintStart_toEndOf="@id/imageView6"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/notification" />
-
-            <!-- Categories (h-scroll) -->
 
             <HorizontalScrollView
                 android:id="@+id/categoryScroll"
@@ -248,7 +242,6 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
-            <!-- Section header row -->
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="18dp"
@@ -284,7 +277,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/categoryScroll"
                 app:srcCompat="@drawable/filtericon" />
 
-            <!-- Product grid (3 rows, 2 columns) -->
             <LinearLayout
                 android:id="@+id/productList"
                 android:layout_width="0dp"
@@ -296,7 +288,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
-                <!-- ROW 1 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -304,7 +295,6 @@
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp">
 
-                    <!-- Product 1 -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -337,6 +327,7 @@
                             android:layout_marginTop="8dp"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -397,7 +388,6 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <!-- Product 2 -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -488,7 +478,6 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- ROW 2 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -497,7 +486,6 @@
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp">
 
-                    <!-- Product 3 -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -587,7 +575,6 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <!-- Product 4 -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -678,7 +665,6 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- ROW 3 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -687,7 +673,6 @@
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp">
 
-                    <!-- Product 5 -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -777,7 +762,6 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <!-- Product 6 -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -868,7 +852,6 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- ROW 4 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -877,7 +860,6 @@
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp">
 
-                    <!-- Product 9 -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -967,7 +949,6 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <!-- Product 10 -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -1059,11 +1040,8 @@
                 </LinearLayout>
 
             </LinearLayout>
-            <!-- /productList -->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <!-- /content -->
     </androidx.core.widget.NestedScrollView>
-    <!-- /scroll -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

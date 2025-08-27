@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".wishlist.WishlistFragment">
 
-    <!-- Everything scrolls together -->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll"
         android:layout_width="0dp"
@@ -26,7 +25,6 @@
             android:paddingHorizontal="16dp"
             android:paddingBottom="16dp">
 
-            <!-- Header (now scrolls) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,7 +61,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- ===== ITEM 1 ===== -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -105,7 +102,6 @@
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"/>
 
-                        <!-- price + sold + rating -->
                         <LinearLayout
                             android:id="@+id/rowPrice1"
                             android:layout_width="0dp"
@@ -158,7 +154,6 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
 
-                <!-- ===== ITEM 2 ===== -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -252,7 +247,6 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
 
-                <!-- ===== ITEM 3 ===== -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -346,7 +340,6 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
 
-                <!-- ===== ITEM 4 ===== -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -444,7 +437,6 @@
 
             </LinearLayout>
 
-            <!-- List container: we'll add/move/remove items here -->
             <LinearLayout
                 android:id="@+id/listContainer"
                 android:layout_width="match_parent"

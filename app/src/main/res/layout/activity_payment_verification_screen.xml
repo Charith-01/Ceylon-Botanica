@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".PaymentVerificationScreen">
 
-    <!-- Back / Share -->
     <ImageView
         android:id="@+id/ivBack"
         android:layout_width="40dp"
@@ -29,7 +28,6 @@
         app:layout_constraintTop_toTopOf="@id/ivBack"
         app:srcCompat="@drawable/shareicon" />
 
-    <!-- Receipt Card -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardReceipt"
         android:layout_width="0dp"
@@ -93,13 +91,11 @@
                 android:layout_marginVertical="14dp"
                 android:background="#1A000000" />
 
-            <!-- Rows -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- helper for one row -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -278,8 +274,6 @@
             </LinearLayout>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
-
-    <!-- Get PDF Receipt (outlined) -->
 
     <Button
         android:id="@+id/btnPdf"

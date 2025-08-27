@@ -8,7 +8,6 @@
     android:background="@color/secondary"
     tools:context=".RegistrationScreen">
 
-    <!-- Title -->
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
@@ -24,7 +23,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Subtitle -->
     <TextView
         android:id="@+id/tvSubtitle"
         android:layout_width="0dp"
@@ -40,7 +38,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- FULL NAME -->
     <TextView
         android:id="@+id/lblFullName"
         android:layout_width="wrap_content"
@@ -83,7 +80,6 @@
             android:textSize="17sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- EMAIL -->
     <TextView
         android:id="@+id/lblEmail"
         android:layout_width="wrap_content"
@@ -126,7 +122,6 @@
             android:textSize="17sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- ADDRESS -->
     <TextView
         android:id="@+id/lblAddress"
         android:layout_width="wrap_content"
@@ -169,7 +164,6 @@
             android:textSize="17sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- PASSWORD -->
     <TextView
         android:id="@+id/lblPassword"
         android:layout_width="wrap_content"
@@ -213,7 +207,6 @@
             android:textSize="17sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- TERMS CHECKBOX -->
     <LinearLayout
         android:id="@+id/termsRow"
         android:layout_width="wrap_content"
@@ -250,7 +243,6 @@
     </LinearLayout>
 
 
-    <!-- SIGN UP BUTTON -->
     <Button
         android:id="@+id/btnSignUp"
         android:layout_width="0dp"
@@ -267,7 +259,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/termsRow" />
 
-    <!-- Divider with OR -->
     <View
         android:id="@+id/dividerLeft"
         android:layout_width="0dp"
@@ -303,7 +294,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="28dp"/>
 
-    <!-- SOCIAL ICONS -->
     <LinearLayout
         android:id="@+id/socialRow"
         android:layout_width="0dp"
@@ -342,7 +332,6 @@
             android:contentDescription="@string/facebook2" />
     </LinearLayout>
 
-    <!-- ALREADY HAVE ACCOUNT -->
     <LinearLayout
         android:id="@+id/bottomRow"
         android:layout_width="0dp"

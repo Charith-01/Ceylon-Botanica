@@ -7,14 +7,11 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <!-- ==== YOUR EXISTING SCREEN CONTENT ==== -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- keep content above the nav bar -->
-        <!-- (padding belongs as its own attribute line, without inline comments) -->
         <View
             android:id="@+id/_spacerForPadding"
             android:layout_width="0dp"
@@ -22,7 +19,6 @@
             android:visibility="gone"
             tools:ignore="MissingConstraints" />
 
-        <!-- Top row (location, title, icons) -->
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
@@ -97,7 +93,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/notification" />
 
-        <!-- Search bar -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/searchbar"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -135,7 +130,6 @@
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Banner -->
         <ImageView
             android:id="@+id/imageView8"
             android:layout_width="390dp"
@@ -147,7 +141,6 @@
             app:layout_constraintTop_toBottomOf="@id/searchbar"
             app:srcCompat="@drawable/banner1" />
 
-        <!-- Categories (h-scroll) -->
         <HorizontalScrollView
             android:id="@+id/categoryScroll"
             android:layout_width="0dp"
@@ -167,8 +160,6 @@
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp">
 
-                <!-- Category items ... (unchanged) -->
-                <!-- Herbal Tea -->
                 <LinearLayout
                     android:id="@+id/catHerbalTea"
                     android:layout_width="84dp"
@@ -320,7 +311,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/categoryScroll" />
 
-        <!-- Product grid (2 columns) -->
         <LinearLayout
             android:id="@+id/productList"
             android:layout_width="0dp"
@@ -331,7 +321,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <!-- ===== ROW 1 ===== -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -339,7 +328,6 @@
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp">
 
-                <!-- Product 1 -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -348,7 +336,6 @@
                     android:orientation="vertical"
                     android:padding="6dp">
 
-                    <!-- rounded holder to make it look like screenshot (no CardView) -->
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -364,7 +351,6 @@
                             app:srcCompat="@drawable/product1" />
                     </FrameLayout>
 
-                    <!-- name + rating -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -395,7 +381,6 @@
                             android:fontFamily="@font/open_sans_bold" />
                     </LinearLayout>
 
-                    <!-- prices + add -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -434,7 +419,6 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Product 2 -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -527,7 +511,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- ===== ROW 2 ===== -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -536,7 +519,6 @@
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp">
 
-                <!-- Product 3 -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -627,7 +609,6 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Product 4 -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -719,7 +700,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- ===== ROW 3 ===== -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -729,7 +709,6 @@
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp">
 
-                <!-- Product 5 -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -820,7 +799,6 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Product 6 -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

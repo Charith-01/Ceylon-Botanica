@@ -8,7 +8,6 @@
     android:background="@color/secondary"
     tools:context=".LoginScreen">
 
-    <!-- Title -->
     <TextView
         android:id="@+id/textView4"
         android:layout_width="0dp"
@@ -24,7 +23,6 @@
         android:layout_marginTop="24dp"
         android:layout_marginHorizontal="16dp"/>
 
-    <!-- Subtitle -->
     <TextView
         android:id="@+id/textView5"
         android:layout_width="0dp"
@@ -40,7 +38,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginHorizontal="32dp"/>
 
-    <!-- Email label -->
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
@@ -54,7 +51,6 @@
         android:layout_marginTop="24dp"
         android:layout_marginStart="16dp"/>
 
-    <!-- EMAIL: Material text box -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilEmail"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -85,7 +81,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Password label -->
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
@@ -99,7 +94,6 @@
         android:layout_marginTop="18dp"
         android:layout_marginStart="16dp"/>
 
-    <!-- PASSWORD: Material text box with eye toggle -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPassword"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -131,10 +125,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Stay signed in (MaterialCheckBox) -->
-
-    <!-- Forgot Password -->
-
     <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/cbStaySignedIn"
         android:layout_width="wrap_content"
@@ -162,7 +152,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/cbStaySignedIn" />
 
-    <!-- Sign In button -->
     <Button
         android:id="@+id/signinbtn"
         android:layout_width="360dp"
@@ -180,7 +169,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cbStaySignedIn" />
 
-    <!-- Divider + OR -->
     <View
         android:id="@+id/dividerLeft"
         android:layout_width="0dp"
@@ -216,7 +204,6 @@
         android:layout_marginTop="28dp"
         android:layout_marginStart="12dp"/>
 
-    <!-- Social icons -->
     <LinearLayout
         android:id="@+id/socialRow"
         android:layout_width="0dp"
@@ -251,7 +238,6 @@
             android:src="@drawable/facebook" />
     </LinearLayout>
 
-    <!-- Sign up prompt -->
     <LinearLayout
         android:id="@+id/bottomRow"
         android:layout_width="0dp"
