@@ -1,5 +1,6 @@
 package com.example.ceylonbotanica
 
+import android.content.Intent
 import android.annotation.SuppressLint
 import android.graphics.Typeface
 import android.os.Bundle
@@ -90,8 +91,13 @@ class HomeScreen : AppCompatActivity() {
         // Prepare fragments once
         ensureFragmentsAdded()
 
-        // Restore selected tab (e.g., after rotation)
-        currentTab = savedInstanceState?.getString(KEY_SELECTED_TAB)?.let { Tab.valueOf(it) } ?: Tab.HOME
+        // Determine initial tab: saved state > intent extra > HOME
+        val requestedByIntent = parseTabExtra(intent)
+        currentTab = savedInstanceState?.getString(KEY_SELECTED_TAB)
+            ?.let { runCatching { Tab.valueOf(it) }.getOrNull() }
+            ?: requestedByIntent
+                    ?: Tab.HOME
+
         setSelectedTab(currentTab, firstTime = true)
 
         // Clicks
@@ -111,28 +117,48 @@ class HomeScreen : AppCompatActivity() {
         }
     }
 
+    // Handle reuse with FLAG_ACTIVITY_SINGLE_TOP (e.g., returning from other screens)
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        parseTabExtra(intent)?.let { setSelectedTab(it) }
+    }
+
+    private fun parseTabExtra(intent: Intent?): Tab? {
+        val name = intent?.getStringExtra("open_tab") ?: return null
+        return runCatching { Tab.valueOf(name) }.getOrNull()
+    }
+
     private fun ensureFragmentsAdded() {
         val fm = supportFragmentManager
         val tx = fm.beginTransaction().setReorderingAllowed(true)
 
-        if (fm.findFragmentByTag(tagHome) == null) {
-            tx.add(R.id.contentContainer, HomeFragment(), tagHome)
+        var home = fm.findFragmentByTag(tagHome)
+        if (home == null) {
+            home = HomeFragment()
+            tx.add(R.id.contentContainer, home, tagHome)
         }
-        if (fm.findFragmentByTag(tagWishlist) == null) {
-            tx.add(R.id.contentContainer, WishlistFragment(), tagWishlist).hide(
-                fm.findFragmentByTag(tagWishlist) ?: WishlistFragment()
-            )
+
+        var wishlist = fm.findFragmentByTag(tagWishlist)
+        if (wishlist == null) {
+            wishlist = WishlistFragment()
+            tx.add(R.id.contentContainer, wishlist, tagWishlist)
         }
-        if (fm.findFragmentByTag(tagCart) == null) {
-            tx.add(R.id.contentContainer, CartFragment(), tagCart).hide(
-                fm.findFragmentByTag(tagCart) ?: CartFragment()
-            )
+        tx.hide(wishlist!!)
+
+        var cart = fm.findFragmentByTag(tagCart)
+        if (cart == null) {
+            cart = CartFragment()
+            tx.add(R.id.contentContainer, cart, tagCart)
         }
-        if (fm.findFragmentByTag(tagProfile) == null) {
-            tx.add(R.id.contentContainer, ProfileFragment(), tagProfile).hide(
-                fm.findFragmentByTag(tagProfile) ?: ProfileFragment()
-            )
+        tx.hide(cart!!)
+
+        var profile = fm.findFragmentByTag(tagProfile)
+        if (profile == null) {
+            profile = ProfileFragment()
+            tx.add(R.id.contentContainer, profile, tagProfile)
         }
+        tx.hide(profile!!)
 
         tx.commitNow()
     }

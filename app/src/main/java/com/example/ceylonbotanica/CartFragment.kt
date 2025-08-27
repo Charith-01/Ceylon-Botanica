@@ -1,12 +1,15 @@
 package com.example.ceylonbotanica.cart
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.ceylonbotanica.R
+import com.example.ceylonbotanica.PaymentGatewayScreen
 import com.google.android.material.button.MaterialButton
 import java.text.DecimalFormat
 import kotlin.math.max
@@ -46,6 +49,13 @@ class CartFragment : Fragment() {
     ): View = inflater.inflate(R.layout.activity_cart_fragment, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Back button -> let HomeScreen switch to Home tab
+        view.findViewById<ImageView>(R.id.btnBack)?.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+
         // Bind views
         tvNewPrice1 = view.findViewById(R.id.tvNewPrice1)
         tvQty1 = view.findViewById(R.id.tvQty1)
@@ -82,6 +92,15 @@ class CartFragment : Fragment() {
 
         btnPlus2.setOnClickListener { qty2++; updateLine2(); updateSummary() }
         btnMinus2.setOnClickListener { qty2 = max(1, qty2 - 1); updateLine2(); updateSummary() }
+
+        // Checkout → PaymentGatewayScreen
+        btnCheckout.setOnClickListener {
+            startActivity(Intent(requireContext(), PaymentGatewayScreen::class.java))
+            requireActivity().overridePendingTransition(
+                R.anim.fade_through_in,
+                R.anim.fade_through_out
+            )
+        }
     }
 
     private fun updateLine1() {
@@ -96,7 +115,7 @@ class CartFragment : Fragment() {
 
     private fun updateSummary() {
         val subtotal = unitPrice1 * qty1 + unitPrice2 * qty2
-        val discount = parseMoney(tvDiscount.text.toString())   // treat as fixed $ amount
+        val discount = parseMoney(tvDiscount.text.toString())   // fixed $ amount
         val delivery = parseMoney(tvDelivery.text.toString())
         val vat = parseMoney(tvVat.text.toString())
 
@@ -108,7 +127,6 @@ class CartFragment : Fragment() {
     }
 
     private fun parseMoney(s: String): Double {
-        // "$64.00" -> 64.0
         val clean = s.replace(Regex("[^0-9.]"), "")
         return clean.toDoubleOrNull() ?: 0.0
     }

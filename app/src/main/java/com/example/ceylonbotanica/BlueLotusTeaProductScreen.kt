@@ -66,12 +66,15 @@ class BlueLotusTeaProductScreen : AppCompatActivity() {
             }
         }
 
-        // Add to Cart → toast + navigate HomeScreen (quick fade-through)
+        // Add to Cart → toast + go to HomeScreen with CART tab (keeps bottom nav)
         findViewById<View>(R.id.btnAddToCart).setOnClickListener {
             Toast.makeText(this, "Added to Cart", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, HomeScreen::class.java)
-                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-            startActivity(intent)
+
+            startActivity(
+                Intent(this, HomeScreen::class.java)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                    .putExtra("open_tab", "CART")
+            )
             overridePendingTransition(R.anim.fade_through_in, R.anim.fade_through_out)
             finish()
         }

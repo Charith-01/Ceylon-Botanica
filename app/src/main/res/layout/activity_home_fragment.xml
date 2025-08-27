@@ -182,14 +182,15 @@
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         app:srcCompat="@drawable/herbelteabtn"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
+                        android:fontFamily="@font/open_sans_bold"
                         android:text="@string/herbal_tea"
                         android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:fontFamily="@font/open_sans_bold"/>
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <!-- Flavors -->
@@ -203,14 +204,15 @@
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         app:srcCompat="@drawable/flavorsbtn"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
+                        android:fontFamily="@font/open_sans_bold"
                         android:text="@string/flavors"
                         android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:fontFamily="@font/open_sans_bold"/>
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <!-- Spices -->
@@ -224,14 +226,15 @@
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         app:srcCompat="@drawable/spicesbtn"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
+                        android:fontFamily="@font/open_sans_bold"
                         android:text="@string/spices"
                         android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:fontFamily="@font/open_sans_bold"/>
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <!-- Leaves -->
@@ -245,14 +248,15 @@
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         app:srcCompat="@drawable/leavesbtn"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
+                        android:fontFamily="@font/open_sans_bold"
                         android:text="@string/leaves"
                         android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:fontFamily="@font/open_sans_bold"/>
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <!-- Seeds -->
@@ -266,14 +270,15 @@
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         app:srcCompat="@drawable/seedsbtn"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
+                        android:fontFamily="@font/open_sans_bold"
                         android:text="@string/seeds"
                         android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:fontFamily="@font/open_sans_bold"/>
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <!-- Fruits -->
@@ -287,14 +292,15 @@
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         app:srcCompat="@drawable/fruitbtn"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
+                        android:fontFamily="@font/open_sans_bold"
                         android:text="@string/fruits"
                         android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:fontFamily="@font/open_sans_bold"/>
+                        android:textSize="14sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -373,7 +379,7 @@
                             android:fontFamily="@font/open_sans_bold"
                             android:text="@string/ceylon_cinnamon"
                             android:textColor="@color/black"
-                            android:textSize="14sp" />
+                            android:textSize="15sp" />
 
                         <ImageView
                             android:layout_width="15dp"
@@ -466,7 +472,7 @@
                             android:fontFamily="@font/open_sans_bold"
                             android:text="@string/turmeric_powder"
                             android:textColor="@color/black"
-                            android:textSize="14sp" />
+                            android:textSize="15sp" />
 
                         <ImageView
                             android:layout_width="18dp"
@@ -560,14 +566,15 @@
                         android:layout_marginTop="8dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@font/open_sans_bold"
                             android:text="@string/blue_lotus_tea"
                             android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/open_sans_bold" />
+                            android:textSize="15sp" />
                         <ImageView
                             android:layout_width="18dp"
                             android:layout_height="18dp"
@@ -650,14 +657,15 @@
                         android:layout_marginTop="8dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@font/open_sans_bold"
                             android:text="@string/vanilla_powder"
                             android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/open_sans_bold" />
+                            android:textSize="15sp" />
                         <ImageView
                             android:layout_width="18dp"
                             android:layout_height="18dp"
@@ -751,14 +759,15 @@
                         android:layout_marginTop="8dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@font/open_sans_bold"
                             android:text="@string/hibiscus_tea"
                             android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/open_sans_bold" />
+                            android:textSize="15sp" />
                         <ImageView
                             android:layout_width="18dp"
                             android:layout_height="18dp"
