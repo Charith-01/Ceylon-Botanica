@@ -18,7 +18,6 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val v = inflater.inflate(R.layout.activity_home_fragment, container, false)
 
-        // Edge-to-edge: add top inset to the scroll container
         val scroll = v.findViewById<View>(R.id.scroll)
         ViewCompat.setOnApplyWindowInsetsListener(scroll) { view, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -26,7 +25,6 @@ class HomeFragment : Fragment() {
             insets
         }
 
-        // Herbal Tea category → open HerbalProductsScreen with fade-through
         v.findViewById<View>(R.id.catHerbalTea)?.setOnClickListener {
             startActivity(Intent(requireContext(), HerbalProductsScreen::class.java))
             requireActivity().overridePendingTransition(

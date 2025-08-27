@@ -54,7 +54,6 @@ class HomeScreen : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_home_screen)
 
-        // Insets: bottom safe area for nav
         val bottomNav = findViewById<LinearLayout>(R.id.bottomNav)
         ViewCompat.setOnApplyWindowInsetsListener(bottomNav) { v, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -62,25 +61,21 @@ class HomeScreen : AppCompatActivity() {
             insets
         }
 
-        // Tabs
         tabHome = findViewById(R.id.tabHome)
         tabWishlist = findViewById(R.id.tabWishlist)
         tabCart = findViewById(R.id.tabCart)
         tabProfile = findViewById(R.id.tabProfile)
 
-        // Icons
         ivHome = findViewById(R.id.ivHome)
         ivWishlist = findViewById(R.id.ivWishlist)
         ivCart = findViewById(R.id.ivCart)
         ivProfile = findViewById(R.id.ivProfile)
 
-        // Labels
         tvHome = findViewById(R.id.tvHome)
         tvWishlist = findViewById(R.id.tvWishlist)
         tvCart = findViewById(R.id.tvCart)
         tvProfile = findViewById(R.id.tvProfile)
 
-        // Labels always visible & bold
         val labelColor = ContextCompat.getColor(this, android.R.color.white)
         listOf(tvHome, tvWishlist, tvCart, tvProfile).forEach { tv ->
             tv.visibility = View.VISIBLE
@@ -88,10 +83,8 @@ class HomeScreen : AppCompatActivity() {
             tv.setTextColor(labelColor)
         }
 
-        // Prepare fragments once
         ensureFragmentsAdded()
 
-        // Determine initial tab: saved state > intent extra > HOME
         val requestedByIntent = parseTabExtra(intent)
         currentTab = savedInstanceState?.getString(KEY_SELECTED_TAB)
             ?.let { runCatching { Tab.valueOf(it) }.getOrNull() }
@@ -100,13 +93,11 @@ class HomeScreen : AppCompatActivity() {
 
         setSelectedTab(currentTab, firstTime = true)
 
-        // Clicks
         tabHome.setOnClickListener { setSelectedTab(Tab.HOME) }
         tabWishlist.setOnClickListener { setSelectedTab(Tab.WISHLIST) }
         tabCart.setOnClickListener { setSelectedTab(Tab.CART) }
         tabProfile.setOnClickListener { setSelectedTab(Tab.PROFILE) }
 
-        // Back press: if not on Home, go Home; else default behavior (finish)
         onBackPressedDispatcher.addCallback(this) {
             if (currentTab != Tab.HOME) {
                 setSelectedTab(Tab.HOME)
@@ -117,7 +108,6 @@ class HomeScreen : AppCompatActivity() {
         }
     }
 
-    // Handle reuse with FLAG_ACTIVITY_SINGLE_TOP (e.g., returning from other screens)
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         setIntent(intent)

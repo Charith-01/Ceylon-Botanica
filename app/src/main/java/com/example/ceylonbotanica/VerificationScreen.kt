@@ -46,13 +46,10 @@ class VerificationScreen : AppCompatActivity() {
         btnVerify = findViewById(R.id.btnCntinue)
         fields = listOf(et1, et2, et3, et4, et5, et6)
 
-        // Setup OTP behaviors
         setupOtpInputs()
 
-        // Initial state
         updateButtonState()
 
-        // Verify -> only if 6 digits entered
         btnVerify.setOnClickListener {
             val code = collectCode()
             if (code.length == fields.size) {
@@ -71,7 +68,6 @@ class VerificationScreen : AppCompatActivity() {
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     val text = (s ?: "").toString()
 
-                    // Handle paste (e.g., user pastes 6 digits into the first box)
                     if (text.length > 1) {
                         val digits = text.filter { it.isDigit() }
                         if (digits.isNotEmpty()) {
@@ -82,14 +78,14 @@ class VerificationScreen : AppCompatActivity() {
                                     j++
                                 } else break
                             }
-                            // Move focus to last filled field
+
                             val lastIdx = (index + digits.length - 1).coerceAtMost(fields.lastIndex)
                             fields[lastIdx].requestFocus()
                         } else {
                             et.setText("")
                         }
                     } else if (text.length == 1) {
-                        // Only allow digits
+
                         if (!text[0].isDigit()) {
                             et.setText("")
                         } else if (index < fields.lastIndex) {
@@ -101,7 +97,6 @@ class VerificationScreen : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable?) {}
             })
 
-            // Backspace on empty -> go to previous box
             et.setOnKeyListener { _, keyCode, event ->
                 if (event.action == KeyEvent.ACTION_DOWN &&
                     keyCode == KeyEvent.KEYCODE_DEL &&
@@ -119,7 +114,6 @@ class VerificationScreen : AppCompatActivity() {
             }
         }
 
-        // Focus on first field initially
         et1.requestFocus()
     }
 

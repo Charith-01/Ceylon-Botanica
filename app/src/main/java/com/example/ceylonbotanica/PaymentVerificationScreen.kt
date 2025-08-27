@@ -20,7 +20,7 @@ class PaymentVerificationScreen : AppCompatActivity() {
             insets
         }
 
-        // Back to Home (Home tab)
+        // Back to Home
         findViewById<View>(R.id.btnBackHome).setOnClickListener {
             startActivity(
                 Intent(this, HomeScreen::class.java)

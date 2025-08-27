@@ -66,7 +66,6 @@ class BlueLotusTeaProductScreen : AppCompatActivity() {
             }
         }
 
-        // Add to Cart → toast + go to HomeScreen with CART tab (keeps bottom nav)
         findViewById<View>(R.id.btnAddToCart).setOnClickListener {
             Toast.makeText(this, "Added to Cart", Toast.LENGTH_SHORT).show()
 
@@ -79,10 +78,8 @@ class BlueLotusTeaProductScreen : AppCompatActivity() {
             finish()
         }
 
-        // Back icon → finish with same animation
         findViewById<ImageView?>(R.id.imageView13)?.setOnClickListener { goBack() }
 
-        // System back
         onBackPressedDispatcher.addCallback(this) { goBack() }
     }
 

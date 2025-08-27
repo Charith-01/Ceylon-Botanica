@@ -22,14 +22,12 @@ class RegistrationScreen : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_registration_screen)
 
-        // Edge-to-edge insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(bars.left, bars.top, bars.right, bars.bottom)
             insets
         }
 
-        // Inputs
         val tilFullName = findViewById<TextInputLayout>(R.id.tilFullName)
         val tilEmail = findViewById<TextInputLayout>(R.id.tilEmail)
         val tilAddress = findViewById<TextInputLayout>(R.id.tilAddress)
@@ -43,13 +41,11 @@ class RegistrationScreen : AppCompatActivity() {
         val cbAgree = findViewById<MaterialCheckBox>(R.id.cbAgree)
         val btnSignUp = findViewById<Button>(R.id.btnSignUp)
 
-        // Clear errors while typing
         etFullName.doOnTextChanged { _, _, _, _ -> tilFullName.error = null }
         etEmail.doOnTextChanged { _, _, _, _ -> tilEmail.error = null }
         etAddress.doOnTextChanged { _, _, _, _ -> tilAddress.error = null }
         etPassword.doOnTextChanged { _, _, _, _ -> tilPassword.error = null }
 
-        // Sign Up -> validate then go to VerificationScreen
         btnSignUp.setOnClickListener {
             val fullName = etFullName.text?.toString()?.trim().orEmpty()
             val email = etEmail.text?.toString()?.trim().orEmpty()

@@ -18,7 +18,7 @@ import java.util.Calendar
 class PaymentGatewayScreen : AppCompatActivity() {
 
     private lateinit var itemViews: List<Pair<View, ImageView>>
-    private var selectedIndex = 2 // 0=PayPal, 1=Visa, 2=Mastercard, 3=Diners, 4=Amex
+    private var selectedIndex = 2
 
     // Form fields
     private lateinit var tilName: TextInputLayout
@@ -38,7 +38,6 @@ class PaymentGatewayScreen : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_payment_gateway_screen)
 
-        // Edge-to-edge padding
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(bars.left, bars.top, bars.right, bars.bottom)
@@ -49,7 +48,6 @@ class PaymentGatewayScreen : AppCompatActivity() {
         findViewById<ImageView?>(R.id.ivBack)?.setOnClickListener { backToCartTab() }
         onBackPressedDispatcher.addCallback(this) { backToCartTab() }
 
-        // ---- Bind form views ----
         tilName = findViewById(R.id.tilName)
         tilCard = findViewById(R.id.tilCard)
         tilExpMonth = findViewById(R.id.tilExpMonth)
@@ -62,14 +60,12 @@ class PaymentGatewayScreen : AppCompatActivity() {
         etExpYear = findViewById(R.id.etExpYear)
         etCvc = findViewById(R.id.etCvc)
 
-        // Clear errors as user types
         addClearErrorOnType(tilName, etName)
         addClearErrorOnType(tilCard, etCard)
         addClearErrorOnType(tilExpMonth, etExpMonth)
         addClearErrorOnType(tilExpYear, etExpYear)
         addClearErrorOnType(tilCvc, etCvc)
 
-        // ---- Pay Now → validate then navigate ----
         findViewById<View>(R.id.btnPayNow).setOnClickListener {
             if (validateForm()) {
                 startActivity(Intent(this, PaymentVerificationScreen::class.java))
@@ -77,7 +73,6 @@ class PaymentGatewayScreen : AppCompatActivity() {
             }
         }
 
-        // ---- Payment method selection ----
         val pmPaypal = findViewById<View>(R.id.pmPaypal)
         val pmVisa = findViewById<View>(R.id.pmVisa)
         val pmMaster = findViewById<View>(R.id.pmMastercard)
@@ -100,36 +95,31 @@ class PaymentGatewayScreen : AppCompatActivity() {
         itemViews.forEachIndexed { index, (container, _) ->
             container.setOnClickListener { select(index) }
         }
-        select(selectedIndex) // default
+        select(selectedIndex)
     }
 
-    // --- Validation helpers ---
 
     private fun validateForm(): Boolean {
         var ok = true
 
-        // Name: required, >= 2 chars
         val name = etName.text?.toString()?.trim().orEmpty()
         if (name.length < 2) {
             tilName.error = "Enter your full name"
             ok = false
         } else tilName.error = null
 
-        // Card: digits only, length 13–19 (basic); you can add Luhn later if you want
         val cardDigits = etCard.text?.toString().orEmpty().filter { it.isDigit() }
         if (cardDigits.length !in 13..19) {
             tilCard.error = "Enter a valid card number"
             ok = false
         } else tilCard.error = null
 
-        // Exp Month: 1–12
         val month = etExpMonth.text?.toString()?.toIntOrNull()
         if (month == null || month !in 1..12) {
             tilExpMonth.error = "Invalid month"
             ok = false
         } else tilExpMonth.error = null
 
-        // Exp Year: accept 2-digit (e.g., 27) or 4-digit (2027). Must not be expired with month.
         val yearRaw = etExpYear.text?.toString().orEmpty()
         val year = yearRaw.toIntOrNull()
         val now = Calendar.getInstance()
@@ -149,7 +139,7 @@ class PaymentGatewayScreen : AppCompatActivity() {
             expValid = false
             ok = false
         } else {
-            // not expired (year > current) OR (year == current and month >= current month)
+
             val notExpired = (yearFull > currYearFull) ||
                     (yearFull == currYearFull && (month ?: 0) >= currMonth)
             if (!notExpired) {
@@ -159,14 +149,12 @@ class PaymentGatewayScreen : AppCompatActivity() {
             } else tilExpYear.error = null
         }
 
-        // CVC: 3–4 digits
         val cvc = etCvc.text?.toString().orEmpty().filter { it.isDigit() }
         if (cvc.length !in 3..4) {
             tilCvc.error = "Invalid CVC"
             ok = false
         } else tilCvc.error = null
 
-        // Focus first invalid field (nice UX)
         if (!ok) {
             when {
                 tilName.error != null -> etName.requestFocus()
@@ -189,7 +177,6 @@ class PaymentGatewayScreen : AppCompatActivity() {
         })
     }
 
-    // --- Payment method selection ---
 
     private fun select(index: Int) {
         selectedIndex = index

@@ -51,12 +51,10 @@ class CartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Back button -> let HomeScreen switch to Home tab
         view.findViewById<ImageView>(R.id.btnBack)?.setOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
 
-        // Bind views
         tvNewPrice1 = view.findViewById(R.id.tvNewPrice1)
         tvQty1 = view.findViewById(R.id.tvQty1)
         btnPlus1 = view.findViewById(R.id.btnPlus1)
@@ -74,19 +72,16 @@ class CartFragment : Fragment() {
         tvTotal = view.findViewById(R.id.tvTotal)
         btnCheckout = view.findViewById(R.id.btnCheckout)
 
-        // Capture unit prices BEFORE we mutate labels
         unitPrice1 = parseMoney(tvNewPrice1.text.toString()) // $18 → 18.0
         unitPrice2 = parseMoney(tvNewPrice2.text.toString()) // $40 → 40.0
 
         qty1 = tvQty1.text.toString().toIntOrNull() ?: 1
         qty2 = tvQty2.text.toString().toIntOrNull() ?: 1
 
-        // Initial render
         updateLine1()
         updateLine2()
         updateSummary()
 
-        // Listeners
         btnPlus1.setOnClickListener { qty1++; updateLine1(); updateSummary() }
         btnMinus1.setOnClickListener { qty1 = max(1, qty1 - 1); updateLine1(); updateSummary() }
 

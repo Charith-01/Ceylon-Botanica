@@ -23,11 +23,11 @@ class OnboardScreen1 : AppCompatActivity() {
 
         findViewById<ImageView>(R.id.nextbtn1).setOnClickListener {
             startActivity(Intent(this, OnboardScreen2::class.java))
-            // (optional) quick fade animation
+
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }
 
-        // SKIP → LoginScreen (clear onboarding from back stack)
+        // SKIP → LoginScreen
         findViewById<Button>(R.id.backbtn).setOnClickListener {
             val intent = Intent(this, LoginScreen::class.java).apply {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)

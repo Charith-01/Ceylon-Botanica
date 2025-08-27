@@ -20,24 +20,20 @@ class LoginScreen : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_login_screen)
 
-        // Edge-to-edge insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(bars.left, bars.top, bars.right, bars.bottom)
             insets
         }
 
-        // Inputs
         val tilEmail = findViewById<TextInputLayout>(R.id.tilEmail)
         val tilPassword = findViewById<TextInputLayout>(R.id.tilPassword)
         val etEmail = findViewById<TextInputEditText>(R.id.etEmail)
         val etPassword = findViewById<TextInputEditText>(R.id.etPassword)
 
-        // Clear errors while typing
         etEmail.doOnTextChanged { _, _, _, _ -> tilEmail.error = null }
         etPassword.doOnTextChanged { _, _, _, _ -> tilPassword.error = null }
 
-        // Sign In -> validate, then navigate to HomeScreen
         findViewById<Button>(R.id.signinbtn).setOnClickListener {
             val email = etEmail.text?.toString()?.trim().orEmpty()
             val password = etPassword.text?.toString()?.trim().orEmpty()

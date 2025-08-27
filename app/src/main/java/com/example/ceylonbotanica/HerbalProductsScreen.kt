@@ -31,7 +31,7 @@ class HerbalProductsScreen : AppCompatActivity() {
             overridePendingTransition(R.anim.fade_through_in, R.anim.fade_through_out)
         }
 
-        // System back → go Home (same animation)
+        // System back → go Home
         onBackPressedDispatcher.addCallback(this) { goBackToHome() }
     }
 
